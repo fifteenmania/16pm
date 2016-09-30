@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2><%=@seminar.title%></h2>
+        <p><%=@seminar.date%></p>
+        <p>given by <%=@seminar.speecher%></p>
+    </div>
+    <div class="panel-body">
+        <% unless @seminar.photos.empty? %>
+            <img src="<%=@seminar.photos.first.file%>" height="50%" width="50%">
+        <% end %>
+        <br/>
+        <%=@seminar.content%>
+    </div>
+</div>

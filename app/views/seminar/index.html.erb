@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>주제</th>
+            <th>날짜</th>
+            <th>연사</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @seminars.each do |seminar| %>
+            <tr>
+                <th><%= seminar.id %></th>
+                <th><a href="/seminar/view/<%=seminar.id%>"><%= seminar.title %></a></th>
+                <th><%= seminar.date %></th>
+                <th><%= seminar.speecher %></th>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<button><a href="/seminar/new">새 글</a></button>
