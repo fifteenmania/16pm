@@ -1,4 +1,6 @@
 class SeminarController < ApplicationController
+    before_action :authenticate_user! , only: [:new, :create]
+    
     def index
         @seminars = Seminar.all
     end

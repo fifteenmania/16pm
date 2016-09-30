@@ -1,10 +1,11 @@
+<%= tinymce_assets %>
 <div>
 <form action="/bulletin/create" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <input name="title" type="text" class="form-control" placeholder="enter title">
     </div>
     <div class="form-group">
-        <textarea name="content" class="form-control" rows="10" placeholder="enter text"></textarea>
+        <textarea name="content" class="tinymce" rows="10"></textarea>
     </div>
     <div class="form-group">
         <input name="file" type="file">
@@ -12,3 +13,4 @@
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
 </div>
+<%= tinymce %>

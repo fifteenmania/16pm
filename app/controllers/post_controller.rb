@@ -1,14 +1,17 @@
 class PostController < ApplicationController
+    before_action :authenticate_user! , only: [:new, :create]
+    
     def index
         @posts = Post.all
     end
     
     def new
-        
+        @post = Post.new
     end
     
     def create
         post = Post.new(post_params)
+        post.user = current_user
         post.save
         unless params[:file].nil?
             photo = Photo.new(photo_params)

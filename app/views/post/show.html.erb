@@ -8,11 +8,12 @@
             <img src="<%=@post.photos.first.file%>" height="50%" width="50%">
         <% end %>
         <br/>
-        <%=@post.content%>
+        <%=@post.content.html_safe %>
     </div>
     <ul class="list-group">
     <% @post.comments.each do |comment| %>
         <li class="list-group-item">
+            <span class="list-group-addon" id="basic-addon1"><%= comment.user.name %>: </span>
             <%= comment.content %>
             <p><%= comment.created_at%></p>
         </li>

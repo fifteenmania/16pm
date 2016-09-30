@@ -9,6 +9,6 @@
             <img src="<%=@seminar.photos.first.file%>" height="50%" width="50%">
         <% end %>
         <br/>
-        <%=@seminar.content%>
+        <%=@seminar.content.html_safe %>
     </div>
 </div>

@@ -3,6 +3,7 @@
         <tr>
             <th>번호</th>
             <th>제목</th>
+            <th>작성자</th>
             <th>작성일</th>
         </tr>
     </thead>
@@ -11,6 +12,7 @@
             <tr>
                 <th><%= post.id %></th>
                 <th><a href="/bulletin/view/<%=post.id%>"><%= post.title %></a></th>
+                <th><%= post.user.name %></th>
                 <th><%= post.created_at %></th>
             </tr>
         <% end %>
