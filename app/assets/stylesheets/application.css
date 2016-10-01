@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ 
+.login {
+     padding: 10px;
+ }
+ 
+a.brand {
+    text-decoration: none;
+    color: #333;
+}
+
+footer {
+    margin-top: 50px;
+    margin-left: 10px;
+}
