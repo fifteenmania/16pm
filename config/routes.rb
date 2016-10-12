@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   get 'intro' => 'home#intro'
   get 'journal' =>'journal#index'
   
-  get 'seminar' => 'seminar#index'
-  get 'seminar/new' => 'seminar#new'
-  post 'seminar/create' => 'seminar#create'
-  get 'seminar/view/:id' => 'seminar#show'
-  get 'seminar/destroy/:id' => 'seminar#destroy'
+  get 'seminar/:category' => 'seminar#index'
+  get 'seminar/:category/new' => 'seminar#new'
+  post 'seminar/:category/create' => 'seminar#create'
+  get 'seminar/:category/view/:id' => 'seminar#show'
+  get 'seminar/:category/destroy/:id' => 'seminar#destroy'
   
   get 'bulletin' => 'post#index'
   get 'bulletin/new' => 'post#new'

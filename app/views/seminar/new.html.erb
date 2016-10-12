@@ -1,7 +1,7 @@
 <%= render partial: "layouts/navbar"%>
 <%= tinymce_assets %>
 <div>
-<form action="/seminar/create" method="post" enctype="multipart/form-data">
+<form action="/seminar/<%=category%>/create" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <input name="title" type="text" class="form-control" placeholder="enter title">
     </div>

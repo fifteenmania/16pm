@@ -56,12 +56,14 @@ ActiveRecord::Schema.define(version: 20160930171451) do
   end
 
   create_table "seminars", force: :cascade do |t|
+    t.string   "category",   default: "regular", null: false
     t.string   "title"
     t.string   "speecher"
     t.text     "content"
     t.date     "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["category"], name: "index_seminars_on_category"
   end
 
   create_table "users", force: :cascade do |t|

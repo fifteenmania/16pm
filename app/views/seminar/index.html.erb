@@ -12,11 +12,11 @@
         <% @seminars.each do |seminar| %>
             <tr>
                 <th><%= seminar.id %></th>
-                <th><a href="/seminar/view/<%=seminar.id%>"><%= seminar.title %></a></th>
+                <th><a href="/seminar/<%=category%>/view/<%=seminar.id%>"><%= seminar.title %></a></th>
                 <th><%= seminar.date %></th>
                 <th><%= seminar.speecher %></th>
             </tr>
         <% end %>
     </tbody>
 </table>
-<button><a href="/seminar/new">새 글</a></button>
+<button><a href="/seminar/<%=category%>/new">새 글</a></button>
