@@ -1,5 +1,5 @@
 class PostController < ApplicationController
-    before_action :authenticate_user! , only: [:new, :create]
+    #before_action :authenticate_user! , only: [:new, :create]
     
     def index
         @posts = Post.all
@@ -43,6 +43,6 @@ class PostController < ApplicationController
         end
         
         def photo_params
-           params.permit(:file) 
+           params.require(:photo).permit(file: []) 
         end
 end
