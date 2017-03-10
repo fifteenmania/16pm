@@ -10,20 +10,21 @@ class SeminarController < ApplicationController
         @seminars = Seminar.where(category: category)
     end
     
-    def new
-        
-    end
-    
     def create
         seminar = Seminar.new(seminar_params)
         seminar.category = category
         seminar.save
-        unless params[:file].nil?
-            photo = Photo.new(photo_params)
-            photo.save
-            seminar.photos << photo
-        end
         redirect_to "/seminar/#{category}"
+    end
+    
+    def edit
+        @seminar = Seminar.find(params[:id])
+    end
+    
+    def update
+        seminar = Seminar.find(params[:id])
+        seminar.update(seminar_params)
+        redirect_to "/seminar/#{category}/view/#{params[:id]}"
     end
     
     def show
@@ -38,7 +39,7 @@ class SeminarController < ApplicationController
     
     private
         def seminar_params
-            params.permit(:title, :speecher, :date, :content)
+            params.permit(:title, :speecher, :date, :content, :attachment)
         end
         
         def photo_params

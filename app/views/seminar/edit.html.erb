@@ -1,0 +1,20 @@
+<%= render partial: "layouts/navbar"%>
+<%= tinymce_assets %>
+<div>
+<form action="/seminar/<%=category%>/update/<%=@seminar.id%>" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <input name="title" type="text" class="form-control" placeholder="enter title" value="<%=@seminar.title%>">
+    </div>
+    <div class="form-group">
+        <input name="speecher" type="text" class="form-control" placeholder="enter speecher" value="<%=@seminar.speecher%>">
+    </div>
+    <div class="form-group">
+        <textarea name="content" class="tinymce" rows="10"><%=@seminar.content%></textarea>
+    </div>
+    <div class="form-group">
+        <input name="date" type="date" value="<%=@seminar.date%>">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
+<%= tinymce %>

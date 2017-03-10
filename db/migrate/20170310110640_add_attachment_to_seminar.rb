@@ -1,0 +1,5 @@
+class AddAttachmentToSeminar < ActiveRecord::Migration[5.0]
+  def change
+    add_column :seminars, :attachment, :string
+  end
+end
