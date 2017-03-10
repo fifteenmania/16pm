@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310120441) do
+ActiveRecord::Schema.define(version: 20170310164211) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(version: 20170310120441) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "seminar_comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "seminar_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["seminar_id"], name: "index_seminar_comments_on_seminar_id"
+    t.index ["user_id"], name: "index_seminar_comments_on_user_id"
+  end
+
   create_table "seminars", force: :cascade do |t|
     t.string   "category",   default: "regular", null: false
     t.string   "title"
@@ -64,7 +74,9 @@ ActiveRecord::Schema.define(version: 20170310120441) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "attachment"
+    t.integer  "user_id"
     t.index ["category"], name: "index_seminars_on_category"
+    t.index ["user_id"], name: "index_seminars_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

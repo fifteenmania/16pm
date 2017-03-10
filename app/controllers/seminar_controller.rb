@@ -13,6 +13,7 @@ class SeminarController < ApplicationController
     def create
         seminar = Seminar.new(seminar_params)
         seminar.category = category
+        seminar.user = current_user
         seminar.save
         redirect_to "/seminar/#{category}"
     end

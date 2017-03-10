@@ -8,6 +8,12 @@ class CommentController < ApplicationController
         redirect_back(fallback_location: "/bulletin")
     end
     
+    def destroy
+        comment = Comment.find(params[:id])
+        comment.destroy
+        redirect_back(fallback_location: "/bulletin") 
+    end
+    
     private
         def comment_params
            params.permit(:content, :post_id) 

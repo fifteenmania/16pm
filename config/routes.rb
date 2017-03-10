@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'seminar/:category/view/:id' => 'seminar#show'
   get 'seminar/:category/destroy/:id' => 'seminar#destroy'
   
+  post 'seminar/:category/view/:id/create' => 'seminar_comment#create'
+  get 'seminar/:category/view/:id/destroy/:comment_id' => 'seminar_comment#destroy'
+  
   get 'bulletin' => 'post#index'
   get 'bulletin/new' => 'post#new'
   post 'bulletin/create' => 'post#create'
